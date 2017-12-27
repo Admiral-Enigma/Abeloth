@@ -1,0 +1,22 @@
+{
+  "name": "abeloth",
+  "version": "0.0.1",
+  "description": "Blockchain based information stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lord-Squirrel/Abeloth.git"
+  },
+  "author": "Lord Squirrel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lord-Squirrel/Abeloth/issues"
+  },
+  "homepage": "https://github.com/Lord-Squirrel/Abeloth#readme",
+  "dependencies": {
+    "blockchain-lite": "^1.0.0"
+  }
+}
