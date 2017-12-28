@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/Lord-Squirrel/Abeloth#readme",
   "dependencies": {
-    "blockchain-lite": "^1.0.0"
+    "blockchain-lite": "^1.0.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "ws": "^3.3.3"
   }
 }
