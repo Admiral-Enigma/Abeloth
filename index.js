@@ -4,6 +4,7 @@ const AbelothNode = require('./abNode')
 let testNode = new AbelothNode(1338)
 
 let node1 = new AbelothNode(1337)
+node1.initWS()
 const app = new express()
 app.use(bodyParser.json())
 app.get('/broadcast', (req, res)=>{
@@ -21,6 +22,7 @@ app.get('/addNode/:port', (req, res)=>{
 
 app.get('/createBlock/:data', (req, res)=>{
     let newBlock = node1.createBlock(req.params.data);
+    console.log(req.params.data);
 
     console.log('block created');
 
