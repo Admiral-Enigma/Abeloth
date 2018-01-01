@@ -7,12 +7,8 @@ class AbelothNode {
     this.chain = new AbelothBlockChain()
     this.sockets = []
     this.abelothServer = new WebSocket.Server({port: port})
-    this.init = true
     console.log('Node running on port ' + port)
-  }
-
-  initWS() {
-    this.abelothServer.on('connection', function (peer) {
+    this.abelothServer.on('connection', (peer) => {
       console.log('New peer connected')
       this.initConnection(peer)
     })
@@ -22,11 +18,11 @@ class AbelothNode {
     console.log('Sending message to all peers: '+ content)
     console.log(request);
     console.log(content);
-    this.sockets.forEach(peer => peer.send(JSON.stringify({request, content})))
+    this.sockets.forEach(peer => peer.send(JSON.stringify({request:request, content:content})))
   }
 
   messageHandler(peer) {
-      peer.on('message', function (data) {
+      peer.on('message', (data) => {
         console.log('Got message from peer:')
         const msg = JSON.parse(data)
         switch (msg.request) {
@@ -42,7 +38,7 @@ class AbelothNode {
 
   disconnectPeer(peer) {
     console.log('Disconnecting peer');
-    this.sockets.splice(sockets.indexOf(peer), 1)
+    this.sockets.splice(this.sockets.indexOf(peer), 1)
   }
 
   initConnection(peer) {
